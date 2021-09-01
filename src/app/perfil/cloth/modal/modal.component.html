@@ -1,0 +1,20 @@
+<img src="assets/image/commerce.svg" style="width: 70%;">
+
+<h3>Prendas cargadas:</h3>
+
+<button class="btn btn-lg btn-outline-dark" (click)="open(content)" *ngFor="let data of data">{{data.tipo}}
+
+<ng-template #content let-c="close" let-d="dismiss" >
+    <div class="modal-header justify-content-center" >
+      <h4 class="modal-title" id="modal-basic-title" >{{ data.tipo }}</h4>
+    </div>
+    <div class="modal-body justify-content-center" >
+      <p style="font-size: 2rem;">{{data.tipo }}</p>
+      <p><img src="{{ data.linkImage}}" style="width: 30%;"> <b>Descripcion: </b> {{data.descripcion}}</p>
+      <!-- <p><b>{{data.precio | currency}}</b>  -  {{data.cantidad }} .Un</p> -->
+    </div>
+    <h6 class="modal-title" id="modal-basic-title" ><small>Numero id: {{this.data._id}})</small> </h6>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Close</button>
+    </div>
+  </ng-template></button>

@@ -1,0 +1,46 @@
+
+<nav class="navbar animated fadeIn">
+
+    <ul class="nav">
+        <li class="nav-item">
+            <a routerLink="/" class="nav-link"><h5>Ayi Academy</h5></a>
+        </li>
+        <li class="nav-item">
+                <a class="nav-link" routerLink="/" routerLinkActive="active">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/perfil" routerLinkActive="active">My data</a>
+        </li>
+        </ul>
+        <!-- aca uso el ngIf para mostrar si el que se logueo es admin o no, y de paso darle una bienvenida personalizada -->
+        <ng-container *ngIf="this.LoginService.user != 'admin'; else elseTemplate">
+           <p style="color: aliceblue; margin-top: 1%"><a class="nav-link" routerLink="/perfil" routerLinkActive="active">Wellcome <b> {{this.LoginService.user || "admin" | uppercase}}</b></a> </p>
+           <ul class="nav">
+               <li class="nav-item">
+                    <a class="nav-link" routerLink="/perfil/cloth" routerLinkActive="active">Shop</a>
+                </li>
+           </ul>
+           
+           <ul class="nav">
+            <li class="nav-item" id="buttonStyle">
+            <button type="button" class="btn btn-outline-secondary">
+                <a class="nav-link" routerLink="/" (click)="this.LoginService.logOut()" routerLinkActive="active" >Logout</a>
+            </button>
+            </li>
+           </ul>
+        </ng-container>
+        <ng-template #elseTemplate>
+            <ul class="nav">
+                <li class="nav-item" id="buttonStyle">
+                <button type="button" class="btn btn-outline-secondary">
+                    <a class="nav-link" routerLink="/login/signin" routerLinkActive="active">Login</a>
+                </button>
+            </li>
+            <li class="nav-item" id="buttonStyle">
+                <button type="button" class="btn btn-outline-secondary" >
+                    <a class="nav-link" routerLink="/login/signup" routerLinkActive="active">Register</a>
+                </button>
+            </li>
+            </ul>
+        </ng-template>
+</nav>

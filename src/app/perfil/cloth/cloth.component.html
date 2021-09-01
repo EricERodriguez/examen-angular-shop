@@ -1,0 +1,66 @@
+
+
+<app-postcloth></app-postcloth>
+
+
+<div class="col-8 mx-auto text-center animated fadeIn mt-5 animated fadeIn">
+  <form class="form-register" [formGroup]="postclothForm"  (ngSubmit)="submit()">
+      <div>
+          <img src="assets/image/commerce.svg" style="width: 70%;">
+      </div>
+      <label for="inputcantidad" >Cantidad</label>
+      <input class="form-control" id="inputcantidad" formControlName="cantidad" type="number" placeholder="cantidad">
+      <label for="inputprecio" >Precio</label>
+      <div class="input-group mb-3">
+        <span class="input-group-text">$</span>
+        <input class="form-control" id="inputprecio" formControlName="precio" type="number" placeholder="precio"><span class="input-group-text">.00</span>
+      </div>
+      <label for="inputprecio" >Tipo de prenda</label>
+      <select name="select" formControlName="tipo" class="form-select form-select-sm" >
+        <option value="BUZO" selected>BUZO</option>
+        <option value="REMERA" >REMERA</option>
+        <option value="CAMPERA">CAMPERA</option>
+      </select>
+      <label for="inputdescripcion" >Descripcion</label>
+        <textarea  class="form-control" id="inputdescripcion" formControlName="descripcion" type="text" placeholder="descripcion"></textarea>
+      <label for="inputlinkImage" >URL <small>link/url de la iamgen a cargar</small></label>
+        <input class="form-control" id="inputlinkImage" formControlName="linkImage" type="text" placeholder="Url">
+      <button class="btn btn-lg btn-primary btn-block mt-3" type="submit">Cargar</button>
+  </form>
+</div>
+
+<hr style="height: 10px;
+background-color: black;" class="animated fadeIn">
+
+
+<app-modal></app-modal>
+
+<div class="animated fadeIn mt-5">
+    <h1> Datos Prendas</h1>
+    <table class="table table-dark table-striped table-bordered table-hover">
+      <thead>
+        <tr>
+          <th scope="col">#id</th>
+          <th scope="col">Tipo</th>
+          <th scope="col">Precio</th>
+          <th scope="col">Unidades</th>
+          <th scope="col">Imagen</th>
+          <th scope="col">Descripcion</th>
+          <th scope="col">Creado el:</th>
+          <th scope="col">Actualizado</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let data of data">
+        <tr >
+          <th scope="row" class="table-dark" >{{data._id}})</th>
+          <td class="table-dark">{{data.tipo }}</td>
+          <td class="table-dark">{{data.precio | currency}}</td>
+          <td class="table-dark">{{data.cantidad }} .Un</td>
+          <td class="table-dark"><img src="{{ data.linkImage}}" style="width: 30%;"></td>
+          <td class="table-dark">{{data.descripcion}}</td>
+          <td class="table-dark">{{data.createdAt | slice:0:10}} </td>
+          <td class="table-dark">{{data.updatedAt | slice:0:10}} </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

@@ -1,0 +1,16 @@
+<div class="col-4 mx-auto text-center animated fadeIn">
+    <form class="form-register" [formGroup]="registerForm" (ngSubmit)="doSubmit()">
+        <div>
+            <img src="assets/image/register.svg" style="width: 40%;">
+        </div>
+        <label for="inputEmail"  >Email</label>
+        <input class="form-control" id="inputEmail" formControlName="email" type="email" placeholder="E-mail">
+        <label for="inputUsername" >Username</label>
+        <input class="form-control" id="inputUsername" formControlName="username" type="text" placeholder="Username">
+        <label for="inputapellido" >Apellido</label>
+        <input class="form-control" id="inputapellido" formControlName="apellido" type="text" placeholder="apellido">
+        <label for="inputPassword" >Password</label>
+        <input class="form-control" id="inputPassword" formControlName="password" type="password" placeholder="Password">
+        <button class="btn btn-lg btn-primary btn-block mt-3" type="submit">Register</button>
+    </form>
+</div>

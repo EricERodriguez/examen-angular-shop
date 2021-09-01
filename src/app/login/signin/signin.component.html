@@ -1,0 +1,12 @@
+<div class="col-4 mx-auto text-center animated fadeIn">
+    <form class="form-signin" [formGroup]="loginForm" (ngSubmit)="doSubmit()">
+        <div>
+            <img src="assets/image/avatar.svg" style="width: 40%;">
+        </div>
+        <label for="inputUsername" >E-mail</label>
+            <input class="form-control" id="inputUsername" formControlName="username" type="text" placeholder="Username">
+        <label for="inputPassword" >Password</label>
+            <input class="form-control" id="inputPassword" formControlName="password" type="password" placeholder="Password">
+        <button class="btn btn-lg btn-primary btn-block mt-3" type="submit">Sign in</button>
+    </form>
+</div>

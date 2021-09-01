@@ -1,0 +1,50 @@
+h5{
+    font-weight: bold;
+    color: white;
+}
+button{
+    background-color: rgba(71, 73, 111, 0);
+    align-items: center;
+    text-align: center;
+}
+a{
+    color: white;
+}
+a:hover{
+    color: rgb(255, 187, 0);
+}
+.navbar{
+    background-color: black ;
+}
+#buttonStyle{
+    align-items: center;
+    padding-right: 10px;
+}
+
+
+.animated {
+    -webkit-animation-duration: 5s;
+    animation-duration: 5s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.fast {
+    -webkit-animation-duration: 0.4s;
+    animation-duration: 0.4s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fadeIn {
+    animation-name: fadeIn;
+}
